@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
-from sas2py.sas import get_sas_code
+from sas2py.sas import get_sas_code, get_names_mapping
 
 class App:
     def __init__(self, root):
@@ -42,12 +42,17 @@ class App:
         self.left_notebook.add(self.left_tab_file, text=f"SAS")
         self.left_tab_explain = ttk.Frame(self.left_notebook)
         self.left_notebook.add(self.left_tab_explain, text=f"Explain")
+        self.left_tab_mapping = ttk.Frame(self.left_notebook)
+        self.left_notebook.add(self.left_tab_mapping, text=f"Mapping")
 
         self.left_text_file = tk.Text(self.left_tab_file, height=15)
         self.left_text_file.pack(fill=tk.BOTH, expand=True)
         self.left_text_file.insert(tk.END, get_sas_code())   # sample sas file
         self.left_text_explain = tk.Text(self.left_tab_explain, height=15)
         self.left_text_explain.pack(fill=tk.BOTH, expand=True)
+        self.left_text_mapping = tk.Text(self.left_tab_mapping, height=15)
+        self.left_text_mapping.pack(fill=tk.BOTH, expand=True)
+        self.left_text_mapping.insert(tk.END, get_names_mapping())   # sample mapping file
 
         # Create right notebook
         self.right_notebook = ttk.Notebook(self.main_frame)

@@ -1,0 +1,28 @@
+{
+  "tables": [
+    {
+      "source": "sashelp.cars",
+      "target": "dealership.cars",
+      "columns": [
+        {
+          "source": "Model",
+          "target": "model"
+        },
+        {
+          "source": "Type",
+          "target": "type"
+        }
+      ]
+    },
+    {
+      "source": "cars_new",
+      "target": "dealership.cars_new",
+      "columns": [
+        {
+          "source": "KmH_City",
+          "target": "kmh_city"
+        }
+      ]
+    }
+  ]
+}
