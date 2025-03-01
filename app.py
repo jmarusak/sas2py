@@ -25,7 +25,7 @@ class App:
         self.menu.add_cascade(label="Command", menu=self.command_menu)
 
         # Add submenus
-        self.command_menu.add_command(label="Explain", command=None)
+        self.command_menu.add_command(label="Explain", command="")
         self.command_menu.add_command(label="Generate", command=self.generate_event)
         self.command_menu.add_command(label="Compare", command=self.compare_event)
 
